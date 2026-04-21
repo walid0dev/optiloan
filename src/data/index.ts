@@ -7,46 +7,52 @@ export type LoanOffer = {
 	monthlyPayment: number;
 	totalCost: number;
 	isRecommended: boolean;
+	brandImageUrl: string;
 };
 
 type LoanOfferSeed = Omit<LoanOffer, 'isRecommended'>;
 
 const LOAN_DATA_SEED: LoanOfferSeed[] = [
 	{
-		id: 'northstar-bank',
-		provider: 'Northstar Bank',
+		id: 'attijariwafa-bank',
+		provider: 'Attijariwafa Bank',
 		amount: 200000,
 		interestRate: 4.2,
 		durationYears: 20,
 		monthlyPayment: 1233,
 		totalCost: 295920,
+		brandImageUrl:"/Attijariwafa_Bank.svg"
 	},
 	{
-		id: 'harbor-credit',
-		provider: 'Harbor Credit Union',
+		id: 'banque-populaire',
+		provider: 'Banque Populaire',
 		amount: 200000,
 		interestRate: 3.9,
 		durationYears: 20,
 		monthlyPayment: 1197,
 		totalCost: 287280,
+		brandImageUrl:"/bofa(deez-nuts).png"
 	},
 	{
-		id: 'summit-finance',
-		provider: 'Summit Finance',
+		id: 'bank-of-africa-morocco',
+		provider: 'Bank of Africa Morocco',
 		amount: 200000,
 		interestRate: 4.6,
 		durationYears: 20,
 		monthlyPayment: 1281,
 		totalCost: 307440,
+		brandImageUrl:"/bp.png"
+
 	},
 	{
-		id: 'riverbank-lending',
-		provider: 'Riverbank Lending',
+		id: 'cih-bank',
+		provider: 'CIH Bank',
 		amount: 200000,
 		interestRate: 4.0,
 		durationYears: 20,
 		monthlyPayment: 1209,
 		totalCost: 290160,
+		brandImageUrl:"/cih.jpg"
 	},
 ];
 

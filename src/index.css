@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Manrope:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -55,6 +56,8 @@
   --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
+  --font-display: 'Fraunces', var(--font-serif);
+  --font-body: 'Manrope', var(--font-sans);
 }
 
 .dark {
@@ -169,12 +172,51 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    background-image:
+      radial-gradient(circle at 90% 5%, color-mix(in oklab, var(--color-chart-1) 20%, transparent), transparent 40%),
+      radial-gradient(circle at 10% 95%, color-mix(in oklab, var(--color-chart-2) 18%, transparent), transparent 38%);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
   }
 }
 
 
-#CreditOfferCard {
+
+
+.app-shell {
+  position: relative;
 }
 
-#CreditOfferCard.expanded {
+.ambient-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(130deg, transparent 0%, color-mix(in oklab, var(--color-chart-1) 10%, transparent) 45%, transparent 75%);
+  opacity: 0.45;
+}
+
+.offer-card {
+  animation: card-rise 0.55s ease both;
+}
+
+.growth-panel {
+  animation: card-rise 0.65s ease both;
+}
+
+@keyframes card-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
