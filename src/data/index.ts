@@ -7,7 +7,6 @@ export type LoanOffer = {
 	monthlyPayment: number;
 	totalCost: number;
 	isRecommended: boolean;
-	brandImageUrl: string;
 };
 
 type LoanOfferSeed = Omit<LoanOffer, 'isRecommended'>;
@@ -21,7 +20,6 @@ const LOAN_DATA_SEED: LoanOfferSeed[] = [
 		durationYears: 20,
 		monthlyPayment: 1233,
 		totalCost: 295920,
-		brandImageUrl:"/Attijariwafa_Bank.svg"
 	},
 	{
 		id: 'banque-populaire',
@@ -31,7 +29,6 @@ const LOAN_DATA_SEED: LoanOfferSeed[] = [
 		durationYears: 20,
 		monthlyPayment: 1197,
 		totalCost: 287280,
-		brandImageUrl:"/bofa(deez-nuts).png"
 	},
 	{
 		id: 'bank-of-africa-morocco',
@@ -41,7 +38,6 @@ const LOAN_DATA_SEED: LoanOfferSeed[] = [
 		durationYears: 20,
 		monthlyPayment: 1281,
 		totalCost: 307440,
-		brandImageUrl:"/bp.png"
 
 	},
 	{
@@ -52,7 +48,6 @@ const LOAN_DATA_SEED: LoanOfferSeed[] = [
 		durationYears: 20,
 		monthlyPayment: 1209,
 		totalCost: 290160,
-		brandImageUrl:"/cih.jpg"
 	},
 ];
 
@@ -85,8 +80,8 @@ export function simulateCompoundGrowth(
 		results.push({
 			year,
 			startingCapital: Number(currentCapital.toFixed(2)),
-			interestEarned: Number(interestEarned.toFixed(2)),
-			endingCapital: Number(endingCapital.toFixed(2)),
+			interestEarned:  Number(interestEarned.toFixed(2)),
+			endingCapital:   Number(endingCapital.toFixed(2)),
 		});
 
 		currentCapital = endingCapital;

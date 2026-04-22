@@ -16,7 +16,7 @@ export default tseslint.config(
     languageOptions: {
       parserOptions: {
         project: ["./tsconfig.app.json", "./tsconfig.node.json"],
-        tsconfigRootDir: import.meta.dirname, 
+        tsconfigRootDir: import.meta.dirname,
       },
     },
     rules: {
@@ -49,5 +49,5 @@ export default tseslint.config(
       react: { version: "detect" },
     },
   },
-  prettierConfig // Must be last to override style rules
+  prettierConfig, // Must be last to override style rules
 );
