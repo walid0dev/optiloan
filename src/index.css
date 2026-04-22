@@ -202,21 +202,3 @@
   opacity: 0.45;
 }
 
-.offer-card {
-  animation: card-rise 0.55s ease both;
-}
-
-.growth-panel {
-  animation: card-rise 0.65s ease both;
-}
-
-@keyframes card-rise {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
