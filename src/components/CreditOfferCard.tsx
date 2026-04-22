@@ -46,9 +46,9 @@ function CreditOfferCard({
         y: { duration: 0.18 },
       }}
       className={cn(
-        "offer-card relative z-0 overflow-hidden border border-border/80 bg-card/95 shadow-sm gradient-card",
+        "offer-card relative z-0 overflow-hidden  border border-border/80 bg-card/95 shadow-sm gradient-card",
         isExpanded
-          ? "fixed inset-0 z-50 h-dvh w-screen rounded-none border-0 shadow-none"
+          ? "fixed inset-0 z-50 h-[110%]  w-screen rounded-none border-0 shadow-none"
           : "cursor-pointer rounded-xl",
       )}
       onClick={isExpanded ? undefined : onToggle}
@@ -70,7 +70,7 @@ function CreditOfferCard({
       <div
         className={cn(
           "relative z-10 flex h-full flex-col",
-          isExpanded ? "p-6 sm:p-8 lg:p-10" : "p-5",
+          isExpanded ? "p-6 sm:p-8 lg:p-10 pb-2" : "p-5",
         )}
       >
         <div className="mb-5 flex items-start justify-between gap-3">
@@ -123,7 +123,7 @@ function CreditOfferCard({
         </div>
 
         {isExpanded ? (
-          <div className="mt-6 grid flex-1 gap-5 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="mt-6 grid flex-1 gap-5 lg:grid-cols-[1fr_2fr]   ">
             <div className="flex flex-col gap-4 overflow-y-auto rounded-3xl border border-border/60 bg-background/70 p-4 text-sm text-foreground/90 sm:p-5">
               <div id={`offer-details-${offer.id}`} className="grid gap-3">
                 <p>

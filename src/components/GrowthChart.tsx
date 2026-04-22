@@ -29,7 +29,7 @@ function GrowthChart({ offer }: GrowthChartProps) {
 
  
     return (
-        <div className="h-full min-h-80 rounded-3xl border border-border/60 bg-card/70 p-4 sm:p-6">
+        <div className="h-full min-h-80 rounded-3xl border border-border/60 bg-card/70 p-4  sm:p-6">
             <div className="mb-4 flex items-center justify-between gap-3">
                 <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
                     Compound interest growth
