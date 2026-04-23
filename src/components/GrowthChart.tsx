@@ -125,4 +125,4 @@ function GrowthChart({ offer }: GrowthChartProps) {
     );
 }
 
-export default memo(GrowthChart);
+export default memo(GrowthChart , (prev, next)=>prev.offer.id === next.offer.id);

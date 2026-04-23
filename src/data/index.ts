@@ -9,9 +9,8 @@ export type LoanOffer = {
 	isRecommended: boolean;
 };
 
-type LoanOfferSeed = Omit<LoanOffer, 'isRecommended'>;
 
-const LOAN_DATA_SEED: LoanOfferSeed[] = [
+export const LOAN_DATA: LoanOffer[] = [
 	{
 		id: 'attijariwafa-bank',
 		provider: 'Attijariwafa Bank',
@@ -20,6 +19,7 @@ const LOAN_DATA_SEED: LoanOfferSeed[] = [
 		durationYears: 20,
 		monthlyPayment: 1233,
 		totalCost: 295920,
+		isRecommended:false,
 	},
 	{
 		id: 'banque-populaire',
@@ -29,6 +29,7 @@ const LOAN_DATA_SEED: LoanOfferSeed[] = [
 		durationYears: 20,
 		monthlyPayment: 1197,
 		totalCost: 287280,
+		isRecommended: true,
 	},
 	{
 		id: 'bank-of-africa-morocco',
@@ -38,6 +39,7 @@ const LOAN_DATA_SEED: LoanOfferSeed[] = [
 		durationYears: 20,
 		monthlyPayment: 1281,
 		totalCost: 307440,
+		isRecommended: false,
 
 	},
 	{
@@ -48,15 +50,10 @@ const LOAN_DATA_SEED: LoanOfferSeed[] = [
 		durationYears: 20,
 		monthlyPayment: 1209,
 		totalCost: 290160,
+		isRecommended: false,
 	},
 ];
 
-const lowestRate = Math.min(...LOAN_DATA_SEED.map((offer) => offer.interestRate));
-
-export const LOAN_DATA: LoanOffer[] = LOAN_DATA_SEED.map((offer) => ({
-	...offer,
-	isRecommended: offer.interestRate === lowestRate,
-}));
 
 export type GrowthPoint = {
 	year: number;

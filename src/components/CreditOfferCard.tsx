@@ -32,7 +32,6 @@ function CreditOfferCard({
   return (
     <motion.article
       layout
-      layoutId={`loan-offer-${offer.id}`}
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -49,9 +48,8 @@ function CreditOfferCard({
         "offer-card relative z-0 overflow-hidden  border border-border/80 bg-card/95 shadow-sm gradient-card",
         isExpanded
           ? "fixed inset-0 z-50 h-[110%]  w-screen rounded-none border-0 shadow-none"
-          : "cursor-pointer rounded-xl",
+          : "rounded-xl",
       )}
-      onClick={isExpanded ? undefined : onToggle}
     >
       <div
         className="pointer-events-none absolute inset-0 z-0"
@@ -92,10 +90,10 @@ function CreditOfferCard({
               <button
                 type="button"
                 onClick={(event) => {
-                  event.stopPropagation();
+                  event.stopPropagation(); // to prevent card click when closing
                   onToggle();
                 }}
-                className="rounded-full border border-border/70 bg-background/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground shadow-sm transition-colors hover:bg-background"
+                className="rounded-full cursor-pointer border border-border/70 bg-background/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground shadow-sm transition-colors hover:bg-background"
               >
                 Close
               </button>
@@ -149,7 +147,7 @@ function CreditOfferCard({
                 event.stopPropagation();
                 onToggle();
               }}
-              className="rounded-full border border-primary/20 bg-primary px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary-foreground shadow-sm transition-transform hover:-translate-y-0.5"
+              className="cursor-pointer rounded-full border border-primary/20 bg-primary px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary-foreground shadow-sm transition-transform hover:-translate-y-0.5"
             >
               See details
             </button>
