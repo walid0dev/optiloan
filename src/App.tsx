@@ -1,14 +1,10 @@
 import {  useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
 import CreditOfferCard from "./components/CreditOfferCard";
 import { LOAN_DATA,  } from "./data";
 
-const DEFAULT_OFFER_ID = null;
 
 function App() {
-  const [currentExpandedOfferId, setExpandedOfferId] = useState<string | null>(
-    DEFAULT_OFFER_ID,
-  );
+  const [currentExpandedOfferId, setExpandedOfferId] = useState<string | null>(null);
   const handleToggleOffer = (offerId:string) => {
     setExpandedOfferId(currentExpandedOfferId === offerId ? null : offerId);
   };
