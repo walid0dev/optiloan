@@ -132,7 +132,7 @@ function CreditOfferCard({
                   <strong>{formatCurrency(offer.monthlyPayment)}</strong>
                 </p>
                 <p>
-                  Total cost: <strong>{formatCurrency(offer.totalCost)}</strong>
+                  Total cost: <strong>{formatCurrency(offer.totalCost + offer.amount)}</strong>
                 </p>
               </div>
             </div>
