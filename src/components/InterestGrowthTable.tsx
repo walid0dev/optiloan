@@ -9,9 +9,9 @@ const InterestGrowthTable = () => {
     const [duration, setDuration] = useState(0);
     const data = simulateCompoundGrowth(amount, rate, duration);
     return (
-        <div className="my-12">
+        <div className="my-12 px-12">
             <h1 className="font-serif text-4xl leading-tight text-foreground sm:text-5xl">
-                Compound intrest simulator
+                Simulate Compound Interest
             </h1>
             <div className="flex gap-x-16 py-4 px-2">
                 <Slider
@@ -22,7 +22,6 @@ const InterestGrowthTable = () => {
                     label="amount"
                     onChange={(v) => {
                         setAmount(v);
-
                     }}
                 />
                 <Slider
@@ -135,7 +134,10 @@ function Table({ data }: TableProps) {
                 <tbody>
                     {data.length === 0 ? (
                         <tr>
-                            <td colSpan={4} className="px-4 py-8 text-center text-muted-foreground">
+                            <td
+                                colSpan={4}
+                                className="px-4 py-8 text-center text-muted-foreground"
+                            >
                                 No data to display. Adjust the sliders above.
                             </td>
                         </tr>
